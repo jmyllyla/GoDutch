@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/DutchCore.js"></script>
+    <script src="js/underscore.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/listController.js"></script>
+
+
+</head>
+<body ng-app="app" ng-controller="ListController">
+<div>
+
+    <ul>
+        <li><a href="file:///android_asset/www/index.html">Lisää tapahtuma</a></li>
+        <li ng-repeat="event in events"><span>{{event.name}}</span><span>:</span><span>{{event.payer}}</span>
+            <span>:</span><span>{{event.amount}}</span>
+            <span>participants</span><span ng-repeat="participant in event.participants track by $index">{{participant}}</span>
+        </li>
+    </ul>
+
+    <ul>
+        <li ng-repeat="debt in debts">
+            {{debt.from}} ows {{debt.amount}} to {{debt.to}}
+        </li>
+
+    </ul>
+
+</div>
+
+</body>
+
+</html>

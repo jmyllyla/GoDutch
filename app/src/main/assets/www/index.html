@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/angular.min.js"></script>
+    <script src="js/addEventController.js"></script>
+</head>
+<body>
+<div ng-app="app" ng-controller="MainController">
+    <h3>Tapahtuma</h3>
+        <input type="text" ng-model="event.name">
+    <h3>Hinta</h3>
+        <input type="number" ng-model="event.amount">
+
+    <h3>Osalliset</h3>
+    <form action="void();">
+        <select name="participants" ng-model="event.participants" multiple>
+            <option value="{{some}}" ng-repeat="some in travellers" selected>{{some}}</option>
+        </select>
+    </form>
+
+    <h3>Maksajat </h3>
+    <form action="void();">
+        <select name="payer" ng-model="event.payer" >
+            <option value="{{some}}" ng-repeat="some in travellers">{{some}}</option>
+        </select>
+    </form>
+
+
+    <div style="margin-top:20px"><button  ng-click="store();">Lisää</button>
+    <button ng-click="hello()">Peruuta</button>
+    </div>
+
+    <span>Event {{event.name}}</span>
+    <span>Participants {{event.participants}}</span>
+    <span>Payer {{event.payer}}</span>
+
+    <!--div><span class="label label-primary" ng-repeat="some in travellers">{{some}}</span>
+    </div-->
+
+
+</div>
+
+</body>
+
+</html>
